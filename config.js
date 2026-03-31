@@ -1,6 +1,10 @@
 // ================================================================
 //  CLIENT CONFIG — EDIT THIS FILE FOR EACH NEW CLIENT
 // ================================================================
+
+// Tracking API — set to your Render booking backend URL
+window.TRACKING_API = "https://YOUR-APP.onrender.com";
+
 window.CLIENT = {
 
   // --- Business info ---

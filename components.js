@@ -1,6 +1,17 @@
 // Shared nav + footer renderer
 // Called by every page after config.js loads
 
+// Track page visit
+(function() {
+  if (!window.TRACKING_API || window.TRACKING_API.includes('YOUR-APP')) return;
+  const page = location.pathname.split('/').pop().replace('.html','') || 'home';
+  fetch(window.TRACKING_API + '/api/track', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ page })
+  }).catch(function(){});
+})();
+
 function renderNav(activePage) {
   const C = window.CLIENT;
   const pages = [

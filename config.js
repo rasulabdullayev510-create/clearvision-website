@@ -3,7 +3,7 @@
 // ================================================================
 
 // Tracking API — set to your Render booking backend URL
-window.TRACKING_API = "https://YOUR-APP.onrender.com";
+window.TRACKING_API = "https://template-booking.onrender.com";
 
 window.CLIENT = {
 
@@ -113,5 +113,5 @@ window.CLIENT = {
   googleMapsLink: "",
 
   // --- Booking URL (Railway backend) ---
-  bookingUrl: "https://YOUR-APP.up.railway.app/book",
+  bookingUrl: "https://template-booking.onrender.com/book",
 };

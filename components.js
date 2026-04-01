@@ -15,14 +15,14 @@
 function renderNav(activePage) {
   const C = window.CLIENT;
   const pages = [
-    { href: 'index.html',    label: 'Home'     },
-    { href: 'services.html', label: 'Services' },
-    { href: 'reviews.html',  label: 'Reviews'  },
-    { href: 'contact.html',  label: 'Contact'  },
+    { id: 'home',     label: 'Home'     },
+    { id: 'services', label: 'Services' },
+    { id: 'reviews',  label: 'Reviews'  },
+    { id: 'contact',  label: 'Contact'  },
   ];
 
   const links = pages.map(p =>
-    `<a href="${p.href}" class="${activePage === p.href ? 'active' : ''}">${p.label}</a>`
+    `<a href="#" id="nav-${p.id}" onclick="navigateTo('${p.id}');return false;" class="${activePage === p.id ? 'active' : ''}">${p.label}</a>`
   ).join('') + `<a href="${C.bookingUrl || '#'}" class="nav-cta" target="_blank">Book Now</a>`;
 
   const logoHtml = C.logoSrc

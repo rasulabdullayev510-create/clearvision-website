@@ -373,6 +373,38 @@ img { max-width: 100%; display: block; }
   font-size: 13px; color: rgba(255,255,255,0.25);
 }
 
+/* ── SPA pages ── */
+.page { display: none; animation: pageIn 0.22s ease both; }
+.page.active { display: block; }
+@keyframes pageIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── Why Choose Us ── */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.why-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 32px;
+  box-shadow: var(--shadow-sm); transition: all 0.2s;
+}
+.why-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.why-icon { font-size: 28px; margin-bottom: 16px; }
+.why-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+.why-card p  { font-size: 14px; color: var(--text2); line-height: 1.65; }
+
+/* ── Pricing note ── */
+.pricing-note { font-size: 13px; color: var(--text2); margin-top: 8px; }
+
+/* ── Social tags (contact page) ── */
+.social-tag {
+  display: inline-flex; padding: 8px 16px; border-radius: 999px;
+  border: 1.5px solid var(--border); font-size: 13px; font-weight: 600;
+  color: var(--text2); transition: all 0.15s;
+}
+.social-tag:hover { border-color: var(--primary); color: var(--primary); }
+
 /* ── Mobile ── */
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; }
@@ -384,8 +416,10 @@ img { max-width: 100%; display: block; }
   .hero-stat-card { flex: 1; min-width: 160px; }
   .contact-grid { grid-template-columns: 1fr; }
   .footer-inner { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 640px) {
+  .why-grid { grid-template-columns: 1fr; }
   .section { padding: 64px 20px; }
   .hero { padding: 60px 20px 56px; }
   .page-header { padding: 52px 20px 48px; }

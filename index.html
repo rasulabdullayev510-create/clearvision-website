@@ -14,14 +14,16 @@
 <!-- Hero -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow" id="hero-eyebrow"></div>
-    <h1 id="hero-h1"></h1>
-    <p class="hero-sub" id="hero-sub"></p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" id="hero-book" href="#">Book Now</a>
-      <a class="btn btn-outline" href="services.html">View Services</a>
+    <div class="hero-left">
+      <div class="hero-eyebrow" id="hero-eyebrow"></div>
+      <h1 id="hero-h1"></h1>
+      <p class="hero-sub" id="hero-sub"></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" id="hero-book" href="#">Book Now</a>
+        <a class="btn btn-outline" href="services.html">View Services</a>
+      </div>
     </div>
-    <div class="hero-stats" id="hero-stats"></div>
+    <div class="hero-right" id="hero-stats"></div>
   </div>
 </section>
 
@@ -77,8 +79,9 @@
   document.getElementById('hero-book').href = C.bookingUrl || '#';
   document.getElementById('cta-book').href = C.bookingUrl || '#';
   const statsEl = document.getElementById('hero-stats');
-  (C.heroStats || []).forEach(function(s) {
-    statsEl.innerHTML += '<div><div class="hero-stat-val">' + s.value + '</div><div class="hero-stat-lbl">' + s.label + '</div></div>';
+  const icons = ['⭐', '👥', '⚡'];
+  (C.heroStats || []).forEach(function(s, i) {
+    statsEl.innerHTML += '<div class="hero-stat-card"><div class="hero-stat-icon">' + (icons[i] || '✦') + '</div><div><div class="hero-stat-val">' + s.value + '</div><div class="hero-stat-lbl">' + s.label + '</div></div></div>';
   });
 
   // Services (first 4)

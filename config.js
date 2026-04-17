@@ -8,110 +8,115 @@ window.TRACKING_API = "https://template-booking.onrender.com";
 window.CLIENT = {
 
   // --- Business info ---
-  name:        "Business Name",
-  tagline:     "Short description of what you do",
+  name:        "Prestige Barbershop",
+  tagline:     "Calgary's go-to barbershop for clean cuts and sharp fades",
   logoSrc:     "assets/logo.png",
-  logoEmoji:   "🔧",
-  phone:       "(403) 555-0000",
-  email:       "info@business.com",
+  logoEmoji:   "✂️",
+  phone:       "(403) 555-0182",
+  email:       "book@prestigebarber.ca",
   address:     "Calgary, AB",
+  city:        "Calgary",
+  siteUrl:     "https://template-website-5oi.pages.dev",
 
   // --- Brand color ---
-  primaryColor: "#2563eb",
-  primaryDark:  "#1d4ed8",
+  primaryColor: "#1a1a2e",
+  primaryDark:  "#0f0f1a",
 
   // --- Hero (home page) ---
-  heroEyebrow:   "Calgary's #1 Rated",
-  heroHeadline:  "Your Main Headline Here",
-  heroHighlight: "Headline",   // this word gets the brand color
-  heroSub:       "A compelling one or two sentence description of your service and why locals choose you.",
+  heroEyebrow:   "Calgary's #1 Rated Barbershop",
+  heroHeadline:  "Look sharp. Feel confident.",
+  heroHighlight: "confident",
+  heroSub:       "Fresh cuts, clean fades, and straight razor shaves — done right every time. Book online in 60 seconds and walk in ready.",
   heroStats: [
-    { value: "5★",   label: "Google Rating" },
-    { value: "200+", label: "Happy Customers" },
-    { value: "24h",  label: "Response Time" },
+    { value: "4.9★", label: "Google Rating" },
+    { value: "800+", label: "Happy Clients" },
+    { value: "60s",  label: "To Book Online" },
   ],
 
   // --- Services ---
   servicesEyebrow: "What We Offer",
-  servicesTitle:   "Services built around you.",
-  servicesSub:     "Everything you need, nothing you don't. Priced fairly and done right.",
+  servicesTitle:   "Every cut. Every time.",
+  servicesSub:     "Whether it's a quick tidy-up or a full grooming session, we've got you covered.",
   services: [
-    { name: "Service One",   description: "What it includes and why customers love it.",  icon: "✦" },
-    { name: "Service Two",   description: "What it includes and why customers love it.",  icon: "✦" },
-    { name: "Service Three", description: "What it includes and why customers love it.",  icon: "✦" },
-    { name: "Service Four",  description: "What it includes and why customers love it.",  icon: "✦" },
+    { name: "Haircut",           description: "Classic or modern — scissors or clippers. Includes a hot towel finish and style.", icon: "✂️" },
+    { name: "Skin Fade",         description: "Zero to skin, blended clean. Our most popular cut for a reason.",                  icon: "⚡" },
+    { name: "Beard Trim & Shape",description: "Crisp lines, defined edges. We shape your beard to match your face.",             icon: "🔲" },
+    { name: "Hot Towel Shave",   description: "Full straight razor shave with hot towel prep. The classic barber experience.",   icon: "🪒" },
+    { name: "Kids Cut",          description: "Patient, friendly, and fast. For boys 12 and under.",                             icon: "👦" },
+    { name: "Cut + Beard Combo", description: "Full haircut and beard service bundled — best value in the shop.",                icon: "✦" },
   ],
 
   // --- Pricing ---
   pricingEyebrow: "Pricing",
-  pricingTitle:   "Transparent pricing. No surprises.",
-  pricingSub:     "We confirm everything before we start. No hidden fees.",
+  pricingTitle:   "Straight-up pricing. No surprises.",
+  pricingSub:     "What you see is what you pay. Cash, card, or tap.",
   pricingNote:    "",
   pricing: [
     {
-      category: "Main Services",
+      category: "Cuts",
       items: [
-        { name: "Service One", price: "$50" },
-        { name: "Service Two", price: "$40" },
+        { name: "Haircut",           price: "$35" },
+        { name: "Skin Fade",         price: "$40" },
+        { name: "Kids Cut (12 & under)", price: "$25" },
       ],
     },
     {
-      category: "Add-ons",
+      category: "Beard & Shave",
       items: [
-        { name: "Add-on One", price: "$20" },
-        { name: "Add-on Two", price: "$15" },
+        { name: "Beard Trim & Shape", price: "$25" },
+        { name: "Hot Towel Shave",    price: "$40" },
       ],
     },
     {
-      category: "Packages",
+      category: "Combos",
       items: [
-        { name: "Starter Pack", price: "$75" },
-        { name: "Full Package",  price: "$120" },
+        { name: "Cut + Beard Combo", price: "$55" },
+        { name: "Cut + Shave Combo", price: "$65" },
       ],
     },
   ],
 
   // --- Process ---
   processEyebrow: "How It Works",
-  processTitle:   "Simple from start to finish.",
+  processTitle:   "In the chair in minutes.",
   process: [
-    { title: "Book Online",    desc: "Pick a date and time that works for you. Takes 60 seconds.",       icon: "01" },
-    { title: "We Confirm",     desc: "You'll get a text confirmation immediately after booking.",         icon: "02" },
-    { title: "We Do the Work", desc: "Show up and let us handle everything. Professional every time.",    icon: "03" },
-    { title: "Leave a Review", desc: "We follow up automatically and make it easy to share your experience.", icon: "04" },
+    { title: "Book Online",      desc: "Pick your service and a time that works. Takes 60 seconds from your phone.",      icon: "01" },
+    { title: "Get Confirmed",    desc: "You'll get a text confirmation the second your booking goes through.",            icon: "02" },
+    { title: "Come In & Sit Down", desc: "Walk in, relax, and let us handle the rest. No waiting around.",               icon: "03" },
+    { title: "We Follow Up",     desc: "We check in after your visit to make sure everything was exactly what you wanted.", icon: "04" },
   ],
 
   // --- Reviews page ---
-  reviewsEyebrow: "What Customers Say",
-  reviewsTitle:   "Trusted by locals across Calgary.",
+  reviewsEyebrow: "What Clients Say",
+  reviewsTitle:   "Trusted by Calgary guys since day one.",
   reviewsSub:     "Don't take our word for it.",
   reviews: [
-    { name: "Sarah M.",  rating: 5, text: "Absolutely incredible service. Fast, affordable, and they actually care about doing it right. Will 100% be back." },
-    { name: "James K.",  rating: 5, text: "Best experience I've had with a local business in Calgary. Booked online in under a minute, confirmed by text, done." },
-    { name: "Priya D.",  rating: 5, text: "Professional, friendly, and worth every penny. My go-to from now on." },
-    { name: "Tyler B.",  rating: 5, text: "Super easy to book and the results were exactly what I needed. Highly recommend." },
-    { name: "Lisa C.",   rating: 4, text: "Great service and fair prices. Really appreciated the follow-up text after my appointment." },
-    { name: "Omar H.",   rating: 5, text: "These guys are the real deal. Showed up, did the job, and made sure I was happy before they left." },
+    { name: "Jordan T.",  rating: 5, text: "Best fade I've ever gotten in Calgary. Walked in looking rough, walked out looking sharp. Already rebooked." },
+    { name: "Marcus B.",  rating: 5, text: "Booked online, got a text confirmation immediately, showed up and was in the chair in 2 minutes. Unreal service." },
+    { name: "Devon S.",   rating: 5, text: "These guys know what they're doing. Clean shop, friendly vibe, and my beard looks incredible." },
+    { name: "Kyle R.",    rating: 5, text: "Took my son here for his first real haircut. They were so patient with him. We'll be back every month." },
+    { name: "Amir H.",    rating: 4, text: "Solid cut and great price. Loved that I got a follow-up text after — felt like they actually cared." },
+    { name: "Tyler M.",   rating: 5, text: "The hot towel shave is something else. Worth every penny. This is my shop now." },
   ],
-  googleReviewLink: "https://g.page/your-business",
-  totalReviews: "150+",
+  googleReviewLink: "https://g.page/prestige-barbershop-calgary",
+  totalReviews: "340+",
   avgRating: "4.9",
 
   // --- Contact page ---
-  contactEyebrow: "Get In Touch",
-  contactTitle:   "We'd love to hear from you.",
-  contactSub:     "Reach out any time. We typically respond within a few hours.",
+  contactEyebrow: "Come See Us",
+  contactTitle:   "We're easy to find.",
+  contactSub:     "Walk-ins welcome, but booking online skips the wait.",
   hours: [
-    { day: "Monday – Friday", time: "9:00 AM – 6:00 PM" },
-    { day: "Saturday",        time: "10:00 AM – 4:00 PM" },
-    { day: "Sunday",          time: "Closed" },
+    { day: "Monday – Friday", time: "9:00 AM – 7:00 PM" },
+    { day: "Saturday",        time: "9:00 AM – 6:00 PM" },
+    { day: "Sunday",          time: "11:00 AM – 4:00 PM" },
   ],
 
   // --- Social links ---
-  instagram:      "",
+  instagram:      "https://instagram.com",
   facebook:       "",
-  googleMapsLink: "",
+  googleMapsLink: "https://maps.google.com",
 
-  // --- Booking URL (Railway backend) ---
+  // --- Booking URL ---
   bookingUrl: "https://template-booking.onrender.com/book",
 };

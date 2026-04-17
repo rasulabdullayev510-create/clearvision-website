@@ -4,6 +4,17 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title id="page-title">Home</title>
+  <meta name="description"        id="meta-desc"    content=""/>
+  <meta name="robots"                               content="index, follow"/>
+  <meta property="og:type"                          content="website"/>
+  <meta property="og:title"       id="og-title"     content=""/>
+  <meta property="og:description" id="og-desc"      content=""/>
+  <meta property="og:url"         id="og-url"       content=""/>
+  <meta name="twitter:card"                         content="summary"/>
+  <meta name="twitter:title"      id="tw-title"     content=""/>
+  <meta name="twitter:description" id="tw-desc"     content=""/>
+  <link rel="canonical"           id="canonical"    href=""/>
+  <script type="application/ld+json" id="ld-json"></script>
   <link rel="stylesheet" href="styles.css"/>
   <script src="config.js"></script>
 </head>
@@ -182,7 +193,7 @@
           </div>
           <div class="contact-block" style="margin-top:36px">
             <h3>Hours of operation</h3>
-            <table class="hours-table" id="hours-table"></table>
+            <div class="hours-table-wrap"><table class="hours-table" id="hours-table"></table></div>
           </div>
         </div>
         <div class="book-cta-box">
@@ -203,7 +214,43 @@
 const C = window.CLIENT;
 document.documentElement.style.setProperty('--primary', C.primaryColor || '#0d9488');
 document.documentElement.style.setProperty('--primary-dark', C.primaryDark || '#0f766e');
-document.getElementById('page-title').textContent = C.name;
+
+// ── SEO meta tags ─────────────────────────────────────────────
+const pageTitle = C.name + (C.tagline ? ' — ' + C.tagline : '');
+const pageDesc  = C.metaDescription || C.heroSub || (C.name + ' in ' + (C.city || C.address || '') + '. Book online in 60 seconds.');
+const pageUrl   = C.siteUrl || window.location.href;
+
+document.getElementById('page-title').textContent  = pageTitle;
+document.getElementById('meta-desc').setAttribute('content', pageDesc);
+document.getElementById('og-title').setAttribute('content', pageTitle);
+document.getElementById('og-desc').setAttribute('content', pageDesc);
+document.getElementById('og-url').setAttribute('content', pageUrl);
+document.getElementById('tw-title').setAttribute('content', pageTitle);
+document.getElementById('tw-desc').setAttribute('content', pageDesc);
+document.getElementById('canonical').setAttribute('href', pageUrl);
+
+// JSON-LD LocalBusiness structured data
+document.getElementById('ld-json').textContent = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": C.name,
+  "description": pageDesc,
+  "url": pageUrl,
+  "telephone": C.phone || '',
+  "email": C.email || '',
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": C.city || C.address || '',
+    "addressCountry": "CA"
+  },
+  "openingHours": (C.hours || []).map(function(h) { return h.day + ': ' + h.time; }),
+  "aggregateRating": C.avgRating ? {
+    "@type": "AggregateRating",
+    "ratingValue": C.avgRating,
+    "reviewCount": parseInt(C.totalReviews) || 1
+  } : undefined,
+  "sameAs": [C.instagram, C.facebook, C.googleMapsLink].filter(Boolean)
+});
 
 // ── SPA Navigation ────────────────────────────────────────────
 function navigateTo(page) {
